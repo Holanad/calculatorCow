@@ -6,7 +6,35 @@ $(document).ready(function() {
         dataType: "json",
         success: function(data) { 
             const animals = $('.animals');   
-            const food = $('.food');        
+            const food = $('.food');   
+            
+            function beginScript() {
+                animals.find('.c-select__title span').attr(
+                    { 
+                        'data-name': animals.find('.c-select-item').eq(0).attr('data-name'), 
+                        'data-cv': animals.find('.c-select-item').eq(0).attr('data-cv'), 
+                        'data-nel': animals.find('.c-select-item').eq(0).attr('data-nel'), 
+                        'data-cp': animals.find('.c-select-item').eq(0).attr('data-cp'), 
+                        'data-ndf': animals.find('.c-select-item').eq(0).attr('data-ndf'), 
+                        'data-upd': animals.find('.c-select-item').eq(0).attr('data-upd'),
+                        'data-crahmal': animals.find('.c-select-item').eq(0).attr('data-crahmal')          
+                    }
+                )
+                animals.find('.c-select__title span').text(animals.find('.c-select-item').eq(0).find('p').text())
+                food.find('.c-select__title span').attr(
+                    { 
+                        'data-name': food.find('.c-select-item').eq(0).attr('data-name'), 
+                        'data-cv': food.find('.c-select-item').eq(0).attr('data-cv'), 
+                        'data-nel': food.find('.c-select-item').eq(0).attr('data-nel'), 
+                        'data-cp': food.find('.c-select-item').eq(0).attr('data-cp'), 
+                        'data-ndf': food.find('.c-select-item').eq(0).attr('data-ndf'), 
+                        'data-upd': food.find('.c-select-item').eq(0).attr('data-upd'),
+                        'data-crahmal': food.find('.c-select-item').eq(0).attr('data-crahmal')          
+                    }
+                )
+                food.find('.c-select__title span').text(food.find('.c-select-item').eq(0).find('p').text())
+            }
+
             for(let i = 1; i <= Object.keys(data.animals).length; i++) {
                 $('.animals .c-select-list').append(`
                     <li class="c-select-item" data-name="${data.animals['cow' + i].name}" data-cv="${data.animals['cow' + i].cv}" data-nel="${data.animals['cow' + i].nel}" data-cp="${data.animals['cow' + i].cp}" data-ndf="${data.animals['cow' + i].ndf}" data-upd="${data.animals['cow' + i].upd}" data-crahmal="${data.animals['cow' + i].crahmal}"> 
@@ -21,6 +49,7 @@ $(document).ready(function() {
                     </li>
                 `);
             }
+            beginScript()
             $('.c-select__title').click(function () {
                 if($(this).parent().hasClass('open')) {
                     $('.c-select').removeClass('open');
@@ -50,6 +79,7 @@ $(document).ready(function() {
                     calcSum()
                 }, 100);
             });
+
             function calcSum () {
                 food.each(function () {
                     let foodDataInputCV = $(this).find('.c-select__title span').attr('data-cv') * $(this).find('.calculator-food-item__input').val();
@@ -133,7 +163,6 @@ $(document).ready(function() {
                     'data-crahmal-procent': sumAllCRAHMAL / animals.find('.c-select span').attr('data-crahmal') * 100   
                 })
                 // рекомендации
-                console.log($('.calculator-food-procent').attr('data-cv-procent'))
                 //Для CV
                 if($('.calculator-food-procent').attr('data-cv-procent') < 90) {
                     $('.recomend-cv p').text('эй,Хозяин мне этого не хватит - сделай так, чтобы в СВ было 100%')
@@ -182,8 +211,33 @@ $(document).ready(function() {
                 } else {
                     $('.recomend-crahmal p').text('в пределах допустимого');
                 }
+                // Убираем непонятные числа
+                if($('.calculator-indicator-item__input').val() == 'NaN') {
+                    $('.calculator-indicator-item__input').val('-')
+                }
+                // Подводим итог КГ
+                let itog = 0;
+                for(let i = 0; i < food.length; i++) {
+                    itog += Number($(food[i]).find('.calculator-food-item__input').val())
+                };
+                $('.itog').find('.calculator-food-head__unit span').text(itog)
             }
+            calcSum();
         }
     })
 
 });
+
+/*
+
+        "food1": {
+            "name": "clear",
+            "cv": 0,
+            "nel": 0,
+            "cp": 0,
+            "ndf": 0,
+            "upd": 0,
+            "crahmal": 0,
+            "_comment": "Выберите корм"
+        },
+*/

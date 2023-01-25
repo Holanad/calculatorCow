@@ -521,6 +521,7 @@ a, span, p, input, button, select, option, textarea, label {
   border-left: 3px solid #000;
   border-right: 3px solid #000;
   font-size: 14px;
+  padding: 0 10px;
 }
 
 .c-select {
@@ -566,6 +567,10 @@ a, span, p, input, button, select, option, textarea, label {
   font-size: 14px;
 }
 
+.c-select-item:hover p {
+  color: #ec671a;
+}
+
 .c-select.open .c-select-list {
   display: block;
 }
@@ -577,5 +582,14 @@ a, span, p, input, button, select, option, textarea, label {
 
 .food:not(:last-child) {
   margin-bottom: 15px;
+}
+
+.itog {
+  padding-right: 5px;
+  text-align: right;
+}
+
+.itog .calculator-food-head__unit {
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */

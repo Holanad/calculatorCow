@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media screen and (max-width: 768px) {
   .container-calc {
     width: 576px;
@@ -8,6 +9,17 @@
   .container-calc {
     width: 100%;
     padding: 0 10px;
+  }
+}
+
+@media print {
+  /* Стиль для печати */
+  body {
+    visibility: hidden;
+  }
+  /* Блок который нужно отобразить */
+  .print {
+    visibility: visible;
   }
 }
 /*# sourceMappingURL=media.css.map */

@@ -63,16 +63,6 @@
     },
     "food": {
         "food1": {
-            "name": "clear",
-            "cv": 0,
-            "nel": 0,
-            "cp": 0,
-            "ndf": 0,
-            "upd": 0,
-            "crahmal": 0,
-            "_comment": "Выберите корм"
-        },
-        "food2": {
             "name": "twig-may",
             "cv": 0.16,
             "nel": 1.20,
@@ -82,7 +72,7 @@
             "crahmal": 14.00,
             "_comment": "трава луговая май-июнь"
         },
-        "food3": {
+        "food2": {
             "name": "twig-july",
             "cv": 0.18,
             "nel": 1.10,
@@ -92,7 +82,7 @@
             "crahmal": 16.00,
             "_comment": "трава луговая июль"
         },
-        "food4": {
+        "food3": {
             "name": "twig-september",
             "cv": 0.20,
             "nel": 1.10,
@@ -102,7 +92,7 @@
             "crahmal": 18.00,
             "_comment": "трава луговая сентябрь"
         },
-        "food5": {
+        "food4": {
             "name": "corn-september",
             "cv": 0.28,
             "nel": 1.80,
@@ -112,7 +102,7 @@
             "crahmal": 35.00,
             "_comment": "зеленая масса кукурузы сентябрь"
         },
-        "food6": {
+        "food5": {
             "name": "rapeseed-may",
             "cv": 0.12,
             "nel": 0.80,
@@ -122,7 +112,7 @@
             "crahmal": 12.00,
             "_comment": "зеленая масса сурепица-рапс май"
         },
-        "food7": {
+        "food6": {
             "name": "beer",
             "cv": 0.20,
             "nel": 1.70,
@@ -132,7 +122,7 @@
             "crahmal": 12.00,
             "_comment": "дробина пивная свежая"
         },
-        "food8": {
+        "food7": {
             "name": "straw",
             "cv": 0.86,
             "nel": 3.00,
@@ -142,7 +132,7 @@
             "crahmal": 1.00,
             "_comment": "солома пшеничная"
         },
-        "food9": {
+        "food8": {
             "name": "hay",
             "cv": 0.86,
             "nel": 3.60,
@@ -152,7 +142,7 @@
             "crahmal": 1.00,
             "_comment": "сено так себе стебли колосья в основном"
         },
-        "food10": {
+        "food9": {
             "name": "hay-bloom",
             "cv": 0.86,
             "nel": 4.50,
@@ -162,7 +152,7 @@
             "crahmal": 1.00,
             "_comment": "сено сеянных трав начало цветения"
         },
-        "food11": {
+        "food10": {
             "name": "hay-twig",
             "cv": 0.86,
             "nel": 7.00,
@@ -172,7 +162,7 @@
             "crahmal": 1.00,
             "_comment": "сено отличное из молодой травы"
         },
-        "food12": {
+        "food11": {
             "name": "silo-corn",
             "cv": 0.28,
             "nel": 1.70,
@@ -182,7 +172,7 @@
             "crahmal": 12.00,
             "_comment": "силос кукурузный мокрый"
         },
-        "food13": {
+        "food12": {
             "name": "silo-corn-cv-35",
             "cv": 0.35,
             "nel": 2.10,
@@ -192,7 +182,7 @@
             "crahmal": 25.00,
             "_comment": "силос кукурузный 35% СВ"
         },
-        "food14": {
+        "food13": {
             "name": "silo-corn-cv-40",
             "cv": 0.40,
             "nel": 2.20,
@@ -202,7 +192,7 @@
             "crahmal": 40.00,
             "_comment": "силос кукурузный 40% СВ"
         },
-        "food15": {
+        "food14": {
             "name": "silo-corn-cv-35-corn",
             "cv": 0.35,
             "nel": 2.30,
@@ -212,7 +202,7 @@
             "crahmal": 39.00,
             "_comment": "силос кукурузный 35% СВ с зерном хор.нарезки"
         },
-        "food16": {
+        "food15": {
             "name": "haystack",
             "cv": 0.37,
             "nel": 1.60,
@@ -222,7 +212,7 @@
             "crahmal": 1.00,
             "_comment": "сенаж убирали все что могли"
         },
-        "food17": {
+        "food16": {
             "name": "haystack-40",
             "cv": 0.50,
             "nel": 2.00,
@@ -232,7 +222,7 @@
             "crahmal": 1.00,
             "_comment": "сенаж из боб.трав хороший 50%"
         },
-        "food18": {
+        "food17": {
             "name": "haystack-twig",
             "cv": 0.45,
             "nel": 2.20,
@@ -242,7 +232,7 @@
             "crahmal": 1.00,
             "_comment": "сенаж из перестоявших трав"
         },
-        "food19": {
+        "food18": {
             "name": "beet",
             "cv": 0.11,
             "nel": 0.80,
@@ -252,7 +242,7 @@
             "crahmal": 1.00,
             "_comment": "свекла кормовая"
         },
-        "food20": {
+        "food19": {
             "name": "potato",
             "cv": 0.22,
             "nel": 1.50,
@@ -262,7 +252,7 @@
             "crahmal": 50.00,
             "_comment": "зерно овса"
         },
-        "food21": {
+        "food20": {
             "name": "oat-grain",
             "cv": 0.88,
             "nel": 6.20,
@@ -272,7 +262,7 @@
             "crahmal": 40.00,
             "_comment": "зерно овса"
         },
-        "food22": {
+        "food21": {
             "name": "barley grain",
             "cv": 0.88,
             "nel": 7.10,
@@ -282,7 +272,7 @@
             "crahmal": 79.00,
             "_comment": "зерно ячменя"
         },
-        "food23": {
+        "food22": {
             "name": "weat",
             "cv": 0.88,
             "nel": 7.50,
@@ -292,7 +282,7 @@
             "crahmal": 87.00,
             "_comment": "зерно пшеницы"
         },
-        "food24": {
+        "food23": {
             "name": "tritikale",
             "cv": 0.88,
             "nel": 7.30,
@@ -302,7 +292,7 @@
             "crahmal": 84.00,
             "_comment": "зерно тритикале"
         },
-        "food25": {
+        "food24": {
             "name": "oat-corn",
             "cv": 0.88,
             "nel": 7.50,
@@ -312,7 +302,7 @@
             "crahmal": 257.00,
             "_comment": "зерно кукурузы"
         },
-        "food26": {
+        "food25": {
             "name": "shrot-38",
             "cv": 0.90,
             "nel": 6.50,
@@ -322,7 +312,7 @@
             "crahmal": 1.00,
             "_comment": "шрот подсолнечный 38%"
         },
-        "food27": {
+        "food26": {
             "name": "shrot-34",
             "cv": 0.90,
             "nel": 6.50,
@@ -332,7 +322,7 @@
             "crahmal": 1.00,
             "_comment": "шрот рапсовый 34%"
         },
-        "food28": {
+        "food27": {
             "name": "shrot-46",
             "cv": 0.90,
             "nel": 7.70,
@@ -342,7 +332,7 @@
             "crahmal": 15.00,
             "_comment": "шрот совевый 46%"
         },
-        "food29": {
+        "food28": {
             "name": "beet-20",
             "cv": 0.20,
             "nel": 1.50,
@@ -352,7 +342,7 @@
             "crahmal": 15.00,
             "_comment": "жом свекловичный 20% СВ"
         },
-        "food30": {
+        "food29": {
             "name": "beet-patoka",
             "cv": 0.77,
             "nel": 6.10,
@@ -362,7 +352,7 @@
             "crahmal": 1.00,
             "_comment": "патока (меласса) свекловичная"
         },
-        "food31": {
+        "food30": {
             "name": "carbid",
             "cv": 0.95,
             "nel": 0.00,
@@ -372,7 +362,7 @@
             "crahmal": 1.00,
             "_comment": "карбамид кормовой"
         },
-        "food32": {
+        "food31": {
             "name": "combicorn",
             "cv": 0.90,
             "nel": 7.00,
@@ -382,7 +372,7 @@
             "crahmal": 50.00,
             "_comment": "комбикорм П-60 средний"
         },
-        "food33": {
+        "food32": {
             "name": "shir-99",
             "cv": 0.95,
             "nel": 19.80,
