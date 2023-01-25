@@ -1,0 +1,467 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+body, html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  font-size: 15px;
+  min-width: 320px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+ul, li {
+  display: block;
+  padding: 0px;
+  margin: 0px;
+}
+
+textarea {
+  resize: none;
+}
+
+p {
+  font-size: 16px;
+}
+
+img {
+  border-style: none;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: none;
+}
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number],
+input[type=number]:hover,
+input[type=number]:focus {
+  -webkit-appearance: none;
+          appearance: none;
+  -moz-appearance: textfield;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=text]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoratio {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+p, nav {
+  margin: 0;
+  padding: 0;
+}
+
+a, a:hover, a:active, a:focus,
+button, input, button:hover, button:active, button:focus,
+input:focus, input:active {
+  text-decoration: none;
+  outline: none;
+  /*  -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease;*/
+}
+
+input {
+  border: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type=text] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-shadow: none;
+}
+
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.f-jcsb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.f-center {
+  display: flex;
+  align-items: center;
+}
+
+.f-jcsb-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.f-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-dc {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-dc-jcsb {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.f-dc-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.f-dc-center-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.img-contain {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+.btn {
+  color: #FFFFFF;
+  background: #E14D4D;
+  border-radius: 10px;
+  padding: 24px 36px;
+  font-family: "Manrope Semibold";
+  transition: all 0.5s ease;
+}
+.btn:hover {
+  background: #F56161;
+}
+.btn:active {
+  background: #E14D4D;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 130%;
+  color: #131313;
+  font-family: "Verdana Bold";
+}
+
+.form-elem {
+  display: flex;
+  flex-direction: column;
+}
+.form-elem label {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-elem__input {
+  width: 100%;
+  padding: 15px;
+  color: #000000;
+  background: #FFFFFF;
+}
+.form-elem input[type=file] {
+  opacity: 0;
+}
+.form-elem span {
+  color: #000000;
+}
+.form-elem svg {
+  cursor: pointer;
+}
+.form .input-file input {
+  display: none;
+}
+
+a, span, p, input, button, select, option, textarea, label {
+  font-family: "Mont-Bold", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  color: #131313;
+}
+
+.container-calc {
+  width: 768px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.calculator-logo {
+  width: 130px;
+  margin-bottom: 10px;
+}
+.calculator__title {
+  font-weight: bold;
+}
+.calculator-main {
+  border: 3px solid #000;
+  margin: 30px 0;
+  padding: 20px;
+}
+.calculator-block {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #000;
+}
+.calculator-block__title {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+.calculator-info {
+  border-bottom: 3px solid #000;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.calculator-info-block {
+  text-align: center;
+}
+.calculator__instruction {
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 5px;
+}
+.calculator__instruction svg {
+  margin-right: 4px;
+}
+.calculator-food-item__number {
+  margin-right: 10px;
+}
+.calculator-food-item-data {
+  margin-left: 10px;
+}
+.calculator-food-item__input {
+  border: 3px solid #000 !important;
+  height: 100%;
+  width: 50px;
+  padding: 10px;
+}
+.calculator-food-head {
+  margin-bottom: 4px;
+  padding: 0 15px 0 36px;
+}
+.calculator-food-head__title {
+  font-weight: bold;
+}
+.calculator-food-head__unit {
+  font-weight: bold;
+}
+.calculator-food-sum, .calculator-food-procent {
+  display: none;
+}
+.calculator-indicator {
+  padding-top: 20px;
+  margin-top: 20px;
+  border: 3px solid #000;
+  padding: 20px;
+}
+.calculator-indicator .calculator-food-head__title {
+  text-decoration: underline;
+}
+.calculator-indicator-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+.calculator-indicator-item-data {
+  width: 140px;
+}
+.calculator-indicator-item__input {
+  border: 3px solid #000 !important;
+  height: 100%;
+  width: 75px;
+  padding: 10px;
+}
+.calculator-recomend {
+  border: 3px solid #000;
+  border-top: none;
+  padding: 20px;
+}
+.calculator-recomend .calculator-food-head__title {
+  text-decoration: underline;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 4px;
+}
+.calculator-recomend-item {
+  border: 3px solid #000;
+  padding: 10px;
+}
+.calculator-recomend-item:not(:last-child) {
+  border-bottom: none;
+}
+.calculator-recomend-item__name {
+  width: 110px;
+  font-size: 14px;
+}
+.calculator-recomend-item__import {
+  width: 150px;
+  font-size: 14px;
+}
+.calculator-recomend-item p {
+  width: 270px;
+  text-align: center;
+  border-left: 3px solid #000;
+  border-right: 3px solid #000;
+  font-size: 14px;
+}
+
+.c-select {
+  border: 3px solid #000;
+  position: relative;
+  width: 100%;
+}
+.c-select__title {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.c-select-list {
+  position: absolute;
+  border: 3px solid #000;
+  background: #fff;
+  left: -2px;
+  width: calc(100% + 5px);
+  padding: 5px;
+  display: none;
+  z-index: 1;
+}
+.c-select-item {
+  padding: 8px 0;
+  cursor: pointer;
+}
+.c-select-item:first-child {
+  padding-top: 3px;
+}
+.c-select-item:last-child {
+  padding-bottom: 3px;
+}
+.c-select-item:not(:last-child) {
+  border-bottom: 3px solid #000;
+}
+.c-select-item p {
+  font-size: 14px;
+}
+.c-select.open .c-select-list {
+  display: block;
+}
+.c-select.open .c-select__title svg {
+  transform: rotate(180deg);
+}
+
+.food:not(:last-child) {
+  margin-bottom: 15px;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,117 @@
+@import '_vars.scss';
+// FLEX
+.flex {
+    display: flex;
+}
+.f-jcsb {
+    display: flex;
+    justify-content: space-between;
+}
+.f-center {
+    display: flex;
+    align-items: center;
+}
+.f-jcsb-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.f-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-dc{
+    display: flex;
+    flex-direction: column;
+}
+.f-dc-jcsb{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.f-dc-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.f-dc-center-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// IMAGE
+.img-cover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.img-contain{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+}
+
+// BTN
+.btn {
+    color: #FFFFFF;
+    background: #E14D4D;
+    border-radius: 10px;
+    padding: 24px 36px;
+    font-family: 'Manrope Semibold';
+    transition: $anim-default;
+    &:hover {
+        background: #F56161;
+    }
+    &:active {
+        background: #E14D4D;
+    }
+}
+//TITLE
+.title{
+    font-size: 40px;
+    line-height: 130%;
+    color: #131313;
+    font-family: 'Verdana Bold';
+}
+
+.form {
+    &-elem {
+        display: flex;
+        flex-direction: column;
+        label {
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__input {
+            width: 100%;
+            padding: 15px;
+            color: #000000;
+            background: #FFFFFF;
+        }
+        input[type="file"] {
+            opacity: 0;
+            
+        }
+        span {
+            color: #000000;
+        }
+        svg {
+            cursor: pointer;
+        }
+    }
+    .input-file {
+        input {
+            display: none;
+        }
+    }
+}
