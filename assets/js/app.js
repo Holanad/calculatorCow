@@ -1,6 +1,10 @@
 // jQuery function
 
 $(document).ready(function() {
+    $('.result__print').click(function (e) {
+        e.preventDefault()
+        window.print()
+    })
     $.ajax({
         url: "assets/json/data.json",
         dataType: "json",
@@ -20,7 +24,16 @@ $(document).ready(function() {
                         'data-crahmal': animals.find('.c-select-item').eq(0).attr('data-crahmal')          
                     }
                 )
-                animals.find('.c-select__title span').text(animals.find('.c-select-item').eq(0).find('p').text())
+                animals.find('.c-select__title span').text(animals.find('.c-select-item').eq(0).find('p').text());
+                
+                $('.table-line-animals p').eq(0).find('strong').text(animals.find('.c-select-item').eq(0).find('p').text())
+                $('.table-line-animals .cv').text(animals.find('.c-select-item').eq(0).attr('data-cv'))
+                $('.table-line-animals .nel').text(animals.find('.c-select-item').eq(0).attr('data-nel'))
+                $('.table-line-animals .cp').text(animals.find('.c-select-item').eq(0).attr('data-cp'))
+                $('.table-line-animals .ndf').text(animals.find('.c-select-item').eq(0).attr('data-ndf'))
+                $('.table-line-animals .upd').text(animals.find('.c-select-item').eq(0).attr('data-upd'))
+                $('.table-line-animals .crahmal').text(animals.find('.c-select-item').eq(0).attr('data-crahmal'))
+
                 food.find('.c-select__title span').attr(
                     { 
                         'data-name': food.find('.c-select-item').eq(0).attr('data-name'), 
@@ -32,7 +45,16 @@ $(document).ready(function() {
                         'data-crahmal': food.find('.c-select-item').eq(0).attr('data-crahmal')          
                     }
                 )
-                food.find('.c-select__title span').text(food.find('.c-select-item').eq(0).find('p').text())
+                food.find('.c-select__title span').text(food.find('.c-select-item').eq(0).find('p').text());
+                //food 1
+                $('.table-line-food p').find('strong').text(food.find('.c-select-item').eq(0).find('p').text())
+                $('.table-line-food .cv').text(food.find('.c-select-item').eq(1).attr('data-cv'))
+                $('.table-line-food .nel').text(food.find('.c-select-item').eq(1).attr('data-nel'))
+                $('.table-line-food .cp').text(food.find('.c-select-item').eq(1).attr('data-cp'))
+                $('.table-line-food .ndf').text(food.find('.c-select-item').eq(1).attr('data-ndf'))
+                $('.table-line-food .upd').text(food.find('.c-select-item').eq(1).attr('data-upd'))
+                $('.table-line-food .crahmal').text(food.find('.c-select-item').eq(1).attr('data-crahmal'))
+
             }
 
             for(let i = 1; i <= Object.keys(data.animals).length; i++) {
@@ -81,6 +103,11 @@ $(document).ready(function() {
             });
 
             function calcSum () {
+                let itog = 0;
+                for(let i = 0; i < food.length; i++) {
+                    itog += Number($(food[i]).find('.calculator-food-item__input').val())
+                };
+                $('.itog').find('.calculator-food-head__unit span').text(itog)
                 food.each(function () {
                     let foodDataInputCV = $(this).find('.c-select__title span').attr('data-cv') * $(this).find('.calculator-food-item__input').val();
                     let foodDataInputNel = $(this).find('.c-select__title span').attr('data-nel') * $(this).find('.calculator-food-item__input').val();
@@ -93,8 +120,11 @@ $(document).ready(function() {
                     $(this).attr("data-nel-sum", foodDataInputNel)
                     $(this).attr("data-cp-sum", foodDataInputCp)
                     $(this).attr("data-ndf-sum", foodDataInputNDF)
-                    $(this).attr("data-upd-sum", foodDataInputUPD)
+                    $(this).attr("data-upd-sum", foodDataInputUPD / itog)
                     $(this).attr("data-crahmal-sum", foodDataInputCRAHMAL) 
+                    console.log(foodDataInputUPD / itog)
+                
+                    
                 })
                 
                 let sumAllCv = 0;
@@ -104,11 +134,20 @@ $(document).ready(function() {
                 let sumAllUPD = 0;
                 let sumAllCRAHMAL = 0;
                 for(let i = 0; i < food.length; i++) {
+                    $('.table-line-food').eq(i).find('.kg').text($(food[i]).find('.calculator-food-item__input').val());
+                    $('.table-line-food').eq(i).find('.cv').text(Number($(food[i]).attr('data-cv-sum')).toFixed(2));
+                    $('.table-line-food').eq(i).find('.nel').text(Number($(food[i]).attr('data-nel-sum')).toFixed(2));
+                    $('.table-line-food').eq(i).find('.cp').text(Number($(food[i]).attr('data-cp-sum')).toFixed(2));
+                    $('.table-line-food').eq(i).find('.ndf').text(Number($(food[i]).attr('data-ndf-sum')).toFixed(2));
+                    $('.table-line-food').eq(i).find('.upd').text(Number($(food[i]).attr('data-upd-sum')).toFixed(2));
+                    $('.table-line-food').eq(i).find('.crahmal').text(Number($(food[i]).attr('data-crahmal-sum')).toFixed(2))
+
                     // sumAllCv
                     if($(food[i]).attr('data-cv-sum') == 'NaN') {
                         sumAllCv += 0
                     } else {
                         sumAllCv += Number($(food[i]).attr('data-cv-sum'))
+                        
                     }
                     // sumAllNel
                     if($(food[i]).attr('data-nel-sum') == 'NaN') {
@@ -140,6 +179,7 @@ $(document).ready(function() {
                     } else {
                         sumAllCRAHMAL += Number($(food[i]).attr('data-crahmal-sum'))
                     }
+
                 };
                 $('.calculator-food-sum').attr({ 
                     'data-cv-sumAll': sumAllCv, 
@@ -149,6 +189,14 @@ $(document).ready(function() {
                     'data-upd-sumAll': sumAllUPD, 
                     'data-crahmal-sumAll': sumAllCRAHMAL     
                 });
+
+                $('.table-sum .cv').text(sumAllCv.toFixed(2));
+                $('.table-sum .nel').text(sumAllNel.toFixed(2));
+                $('.table-sum .ndf').text(sumAllNDF.toFixed(2));
+                $('.table-sum .cp').text(sumAllCp.toFixed(2));
+                $('.table-sum .upd').text(sumAllUPD.toFixed(2));
+                $('.table-sum .crahmal').text(sumAllCRAHMAL.toFixed(2));
+
                 $('.calculator-indicator-item').eq(0).find('input').val((sumAllCp / sumAllCv / 10).toFixed(2));
                 $('.calculator-indicator-item').eq(1).find('input').val((sumAllNel / sumAllCv).toFixed(2));
                 $('.calculator-indicator-item').eq(2).find('input').val(((sumAllNel - 50) / 2.8).toFixed(2));
@@ -162,6 +210,12 @@ $(document).ready(function() {
                     'data-upd-procent': sumAllUPD / animals.find('.c-select span').attr('data-upd') * 100, 
                     'data-crahmal-procent': sumAllCRAHMAL / animals.find('.c-select span').attr('data-crahmal') * 100   
                 })
+                $('.table-procent .cv').text((sumAllCv / animals.find('.c-select span').attr('data-cv') * 100).toFixed(2));
+                $('.table-procent .nel').text((sumAllNel / animals.find('.c-select span').attr('data-nel') * 100).toFixed(2));
+                $('.table-procent .ndf').text((sumAllNDF / animals.find('.c-select span').attr('data-ndf') * 100).toFixed(2));
+                $('.table-procent .cp').text((sumAllCp / animals.find('.c-select span').attr('data-cp') * 100).toFixed(2));
+                $('.table-procent .upd').text((sumAllUPD / animals.find('.c-select span').attr('data-upd') * 100).toFixed(2));
+                $('.table-procent .crahmal').text((sumAllCRAHMAL / animals.find('.c-select span').attr('data-crahmal') * 100).toFixed(2));
                 // рекомендации
                 //Для CV
                 if($('.calculator-food-procent').attr('data-cv-procent') < 90) {
@@ -216,13 +270,20 @@ $(document).ready(function() {
                     $('.calculator-indicator-item__input').val('-')
                 }
                 // Подводим итог КГ
-                let itog = 0;
-                for(let i = 0; i < food.length; i++) {
-                    itog += Number($(food[i]).find('.calculator-food-item__input').val())
-                };
-                $('.itog').find('.calculator-food-head__unit span').text(itog)
+                
+                /// Заполняем таблицу
+
             }
             calcSum();
+            animals.find('.c-select-item').click(function() {
+                $('.table-line-animals').find('.cv').text($(this).attr('data-cv'));
+                $('.table-line-animals').find('.nel').text($(this).attr('data-nel'))
+                $('.table-line-animals').find('.cp').text($(this).attr('data-cp'))
+                $('.table-line-animals').find('.ndf').text($(this).attr('data-ndf'))
+                $('.table-line-animals').find('.upd').text($(this).attr('data-upd'))
+                $('.table-line-animals').find('.crahmal').text($(this).attr('data-crahmal'))
+                $('.table-line-animals').find('.name').text($(this).text())
+            })
         }
     })
 

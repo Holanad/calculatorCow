@@ -13,12 +13,17 @@
 }
 
 @media print { /* Стиль для печати */
-    body{
-      visibility: hidden;
+    .calculator{
+      display: none;
     }
     /* Блок который нужно отобразить */
     .print {
       visibility: visible;
+    }
+    .result {
+        &-head {
+            display: none;
+        }
     }
 }
 

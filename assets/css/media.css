@@ -4,22 +4,21 @@
     width: 576px;
   }
 }
-
 @media screen and (max-width: 576px) {
   .container-calc {
     width: 100%;
     padding: 0 10px;
   }
 }
-
-@media print {
-  /* Стиль для печати */
-  body {
-    visibility: hidden;
+@media print { /* Стиль для печати */
+  .calculator {
+    display: none;
   }
   /* Блок который нужно отобразить */
   .print {
     visibility: visible;
   }
-}
-/*# sourceMappingURL=media.css.map */
+  .result-head {
+    display: none;
+  }
+}/*# sourceMappingURL=media.css.map */
